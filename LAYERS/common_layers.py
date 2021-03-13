@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras.layers import ZeroPadding2D, Conv2D, LeakyReLU, Input, Add
+from tensorflow.keras.layers import BatchNormalization, ZeroPadding2D, Conv2D, LeakyReLU, Input, Add
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras import Model
 
@@ -8,7 +8,7 @@ BATCH_NORM_EPSILON = 1e-05
 
 #Batch Normalization
 def batch_norm(inputs, momentum=BATCH_NORM_DECAY, epsilon=BATCH_NORM_EPSILON):
-    return tf.keras.layers.BatchNormalization(
+    return BatchNormalization(
         axis = 3, momentum = momentum, epsilon = epsilon,
         scale = True, trainable = False)(inputs)
 

@@ -2,8 +2,7 @@ PROJECT DIRECTORY
 
     [DATASET] (ref COCO)
         coco.names
-        dog.jpg
-        test.jpg
+        dog.jpg  |  horses.jpg  |  kite.jpg  |  scream.jpg
 
     [LAYERS]
         common_layers.py

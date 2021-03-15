@@ -94,7 +94,7 @@ def non_max_suppression(inputs, n_classes, max_output_size, iou_threshold,
 
     #builidng boxes tensor from inputs and classes
     boxes = tf.concat([inputs[:, :5], classes], axis=-1)
-    
+
     #support array to be returned with final bboxes
     array_bboxes = []
 
@@ -146,9 +146,11 @@ def draw_boxes(img, outputs, class_names): #visual representation of model's com
         x2y2    = (int(x2y2[0]),int(x2y2[1]))
         score   = float(score[0])
         idx     = int(clss[0])
-        
+
         #access label with key index
         class_label = classes[idx]
+        
+        print(class_label+": "+str(round(score, 2))+" %")
         
         #draw rectangle of bbox and label
         img = cv2.rectangle(img, x1y1, x2y2, (255,0,0), 2) #draw rectangle bases on new coordinates

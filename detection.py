@@ -44,7 +44,7 @@ def detect_image(Yolo, image_path, output_path, input_size, CLASSES, iou_thresho
         return image
     else:
         print("No detection on provided image! Exiting...")
-        return False
+        return []
     
 
 
@@ -60,7 +60,7 @@ def main():
 
     detection = detect_image(yolo, IMG_PATH, PRED_PATH, MODEL_IMG_SIZE[0], LABELS_PATH, IOU_THRESHOLD, CONFIDENCE_THRESHOLD)
 
-    if detection != False:
+    if detection != []:
         end = timer()
         print("Predicted in "+ str(end - start) +" seconds")
 

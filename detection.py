@@ -21,7 +21,7 @@ NUM_CLASSES = 80
 
 LABELS_PATH = 'DATASET/coco.names'
 WEIGHTS_PATH = 'yolov3.weights'
-IMG_PATH  = 'DATASET/scream.jpg'
+IMG_PATH  = 'DATASET/dog.jpg'
 PRED_PATH = 'DATASET' 
 
 
